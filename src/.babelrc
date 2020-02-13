@@ -1,0 +1,10 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false // 设置为：false，否则Babel将在Rollup有机会执行其操作之前将我们的模块转换为CommonJS，从而导致其失败。
+      }
+    ]
+  ]
+}
