@@ -1,10 +1,13 @@
+
+(function(l, r) { if (l.getElementById('livereloadscript')) return; r = l.createElement('script'); r.async = 1; r.src = '//' + (window.location.host || 'localhost').split(':')[0] + ':35730/livereload.js?snipver=1'; r.id = 'livereloadscript'; l.getElementsByTagName('head')[0].appendChild(r) })(window.document);
 (function (factory) {
   typeof define === 'function' && define.amd ? define(factory) :
   factory();
 }((function () { 'use strict';
 
   var sayHello = function sayHello(message) {
-    alert(message);
+    // alert(message);
+    console.log('wqh');
   };
 
   var Greeter = /** @class */ (function () {
@@ -12,10 +15,13 @@
           this.greeting = message;
       }
       Greeter.prototype.greet = function () {
+          console.log('dog');
+          console.log('----------------------------');
           console.log('hello ts');
       };
       return Greeter;
   }());
+  //# sourceMappingURL=Greeter.js.map
 
   function styleInject(css, ref) {
     if ( ref === void 0 ) ref = {};
@@ -44,13 +50,14 @@
     }
   }
 
-  var css = "body {\n  background: red;\n}\n.container {\n  width: 300px;\n  height: 300px;\n  background-color: black;\n}";
+  var css = "body {\r\n  background: red;\r\n}\r\n.container {\r\n  width: 300px;\r\n  height: 300px;\r\n  background-color: black;\r\n}";
   styleInject(css);
 
-  var container = "<div class=\"container\" style=\"color: red\">\u5185\u5BB9</div>";
-  document.getElementById("container").innerHTML = container;
+  // import sayHello from './modules/MyModule';
+  var container = '<div class="container" style="color: red">内容</div>';
+  document.getElementById('container').innerHTML = container;
   var a = new Greeter();
   a.greet();
-  sayHello('Hello from Rollup and lodash: ');
+  sayHello();
 
 })));

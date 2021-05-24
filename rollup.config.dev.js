@@ -4,6 +4,13 @@ import commonjs from '@rollup/plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 // import { terser } from "rollup-plugin-terser";
 import postcss from 'rollup-plugin-postcss';
+// import serve from 'rollup-plugin-serve';
+import dev from 'rollup-plugin-dev';
+import livereload from 'rollup-plugin-livereload';
+import alias from '@rollup/plugin-alias';
+
+const path = require('path');
+const resolveDir = dir => path.join(__dirname, dir);
 
 export default {
   input: 'src/main.js', // 要打包的文件源路径(应用程序的主要入口点)
@@ -38,5 +45,20 @@ export default {
     }),
     // terser(),
     postcss(),
+    alias({
+      entries: [
+        { find: '@', replacement: resolveDir('src') }
+      ]
+    }),
+    livereload(),
+    // serve({
+    //   open: true,
+    //   port: 8888,
+    //   contentBase: ''
+    // }),
+    dev({
+      port: 8888,
+      dirs: '',
+    }),
   ],
 };

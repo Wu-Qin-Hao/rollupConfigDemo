@@ -5,6 +5,8 @@ class Greeter {
       this.greeting = message;
   }
   greet() {
+    console.log('dog');
+    console.log('----------------------------')
     console.log('hello ts');
   }
 }

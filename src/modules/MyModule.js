@@ -1,5 +1,6 @@
 const sayHello = (message) => {
-  alert(message);
+  // alert(message);
+  console.log('wqh')
 };
 
 export default sayHello;
